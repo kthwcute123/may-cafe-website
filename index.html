@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="Mây Café — một góc nhỏ để chậm lại, thưởng thức cà phê ngon và những món bánh làm mỗi ngày.">
+  <title>Mây Café — Chậm một chút, vui một ngày</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f7f4ed; --ink: #262a22; --muted: #72766b; --green: #344c3d;
+      --sage: #dce3d5; --line: #deded4; --cream: #eee7d9; --white: #fffdf8;
+      --serif: "Playfair Display", Georgia, serif; --sans: "DM Sans", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
+    .topline { height: 4px; background: var(--green); }
+    header { display:flex; align-items:center; justify-content:space-between; padding: 22px 0; gap: 24px; }
+    .brand { display:flex; align-items:center; gap: 11px; font-size: 19px; font-weight:700; letter-spacing:-.04em; }
+    .brand-mark { width:35px; height:35px; display:grid; place-items:center; background:var(--green); color:var(--paper); border-radius:50%; font-family:var(--serif); font-size:20px; }
+    nav { display:flex; align-items:center; gap:30px; font-size:13px; color:#52584e; }
+    nav a:hover { color:var(--green); }
+    .nav-cta { border:1px solid var(--green); padding:12px 17px; border-radius:3px; color:var(--green); }
+    .menu-toggle { display:none; border:0; background:none; color:var(--ink); font-size:25px; cursor:pointer; }
+    .hero { display:grid; grid-template-columns: .92fr 1.08fr; min-height:580px; align-items:center; gap:55px; padding:44px 0 72px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--green); text-transform:uppercase; letter-spacing:.18em; font-size:10px; font-weight:700; }
+    .eyebrow:before { content:""; width:26px; height:1px; background:var(--green); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-family:var(--serif); font-size:clamp(46px,6vw,76px); line-height:1.04; letter-spacing:-.045em; font-weight:500; margin:23px 0; }
+    h1 em { color:#6c8068; font-weight:400; }
+    .hero-copy { max-width:420px; font-size:15px; line-height:1.9; color:var(--muted); margin-bottom:29px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 20px; border:1px solid var(--green); border-radius:3px; font-size:12px; font-weight:700; transition:.2s; cursor:pointer; }
+    .btn.primary { background:var(--green); color:white; }
+    .btn.primary:hover { background:#26392d; transform:translateY(-1px); }
+    .btn.secondary:hover { background:var(--sage); }
+    .hero-visual { position:relative; min-height:470px; }
+    .hero-photo { position:absolute; inset:0 30px 24px 30px; width:calc(100% - 60px); height:calc(100% - 24px); object-fit:cover; border-radius:48% 48% 4px 4px; }
+    .photo-note { position:absolute; bottom:0; left:0; background:var(--white); padding:18px 21px; box-shadow:0 10px 30px #1c281411; max-width:230px; }
+    .photo-note strong { display:block; font-family:var(--serif); font-size:19px; font-weight:500; margin-bottom:4px; }
+    .photo-note span { font-size:11px; color:var(--muted); }
+    .round-stamp { position:absolute; right:0; top:32px; width:94px; height:94px; border-radius:50%; background:var(--sage); display:grid; place-items:center; text-align:center; font-size:10px; line-height:1.5; letter-spacing:.1em; text-transform:uppercase; transform:rotate(9deg); }
+    .round-stamp b { display:block; font-family:var(--serif); font-size:22px; font-weight:500; letter-spacing:0; }
+    .ticker { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:19px 0; }
+    .ticker-inner { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; color:#596054; font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
+    .ticker span { display:flex; align-items:center; gap:12px; }
+    .ticker i { width:5px; height:5px; border-radius:50%; background:#82917a; }
+    section { padding:100px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:28px; margin-bottom:38px; }
+    .section-head h2 { font-family:var(--serif); font-size:clamp(35px,4vw,51px); line-height:1.1; font-weight:500; letter-spacing:-.035em; margin:16px 0 0; }
+    .section-head p { max-width:330px; font-size:13px; color:var(--muted); line-height:1.8; margin:0; }
+    .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .menu-card { background:var(--white); padding:12px 12px 22px; border:1px solid #e8e5dc; }
+    .menu-card img { width:100%; height:245px; object-fit:cover; display:block; }
+    .menu-meta { display:flex; justify-content:space-between; gap:12px; align-items:start; padding:20px 8px 0; }
+    .menu-meta h3 { font-family:var(--serif); font-weight:500; font-size:22px; margin:0 0 7px; }
+    .menu-meta p { font-size:11px; line-height:1.7; color:var(--muted); margin:0; }
+    .price { color:var(--green); font-weight:700; font-size:13px; white-space:nowrap; padding-top:4px; }
+    .about { background:var(--sage); }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .about-image { width:100%; height:470px; object-fit:cover; }
+    .about-copy h2 { font-family:var(--serif); font-size:clamp(36px,4.5vw,55px); font-weight:500; line-height:1.1; letter-spacing:-.04em; margin:18px 0 24px; }
+    .about-copy p { font-size:14px; line-height:1.95; color:#596054; max-width:440px; }
+    .signature { font-family:var(--serif); font-style:italic; color:var(--green); font-size:23px; margin-top:28px; }
+    .quote { text-align:center; padding:100px 0 110px; }
+    .quote-mark { color:#899781; font-family:var(--serif); font-size:54px; line-height:.8; }
+    .quote blockquote { max-width:780px; margin:18px auto 22px; font-family:var(--serif); font-size:clamp(28px,4vw,43px); line-height:1.35; font-weight:400; letter-spacing:-.025em; }
+    .quote p { font-size:10px; letter-spacing:.16em; color:var(--muted); text-transform:uppercase; }
+    .visit { background:var(--green); color:var(--paper); }
+    .visit-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+    .visit h2 { font-family:var(--serif); font-weight:500; font-size:clamp(40px,5vw,59px); line-height:1.1; letter-spacing:-.04em; margin:18px 0 20px; }
+    .visit .eyebrow { color:#c9d4c4; }
+    .visit .eyebrow:before { background:#c9d4c4; }
+    .visit-copy { color:#d3dbd0; line-height:1.9; font-size:13px; max-width:390px; }
+    .visit-details { border-top:1px solid #ffffff36; margin-top:28px; }
+    .detail { display:grid; grid-template-columns:100px 1fr; gap:18px; padding:16px 0; border-bottom:1px solid #ffffff36; font-size:12px; line-height:1.8; }
+    .detail span:first-child { color:#c9d4c4; }
+    .visit .btn { margin-top:26px; background:var(--paper); border-color:var(--paper); color:var(--green); }
+    .visit-image { width:100%; height:470px; object-fit:cover; }
+    footer { padding:28px 0; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; color:var(--muted); font-size:11px; }
+    .socials { display:flex; gap:20px; color:var(--ink); }
+    .toast { position:fixed; bottom:22px; left:50%; transform:translate(-50%,20px); opacity:0; pointer-events:none; background:var(--green); color:white; padding:13px 18px; font-size:13px; border-radius:4px; transition:.25s; z-index:10; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @media (max-width: 800px) {
+      .wrap { width:min(100% - 34px, 620px); }
+      header { padding:17px 0; }
+      .menu-toggle { display:block; }
+      nav { display:none; position:absolute; top:72px; left:17px; right:17px; z-index:5; background:var(--white); padding:20px; border:1px solid var(--line); flex-direction:column; align-items:stretch; gap:20px; box-shadow:0 12px 28px #0000000d; }
+      nav.open { display:flex; }
+      .nav-cta { text-align:center; }
+      .hero { grid-template-columns:1fr; gap:35px; padding:36px 0 55px; }
+      .hero-copy { max-width:520px; }
+      .hero-visual { min-height:410px; }
+      .hero-photo { inset:0 22px 22px 22px; width:calc(100% - 44px); }
+      .section-head { display:block; }
+      .section-head p { margin-top:18px; }
+      section { padding:72px 0; }
+      .menu-grid { grid-template-columns:1fr 1fr; }
+      .menu-card:last-child { display:none; }
+      .menu-card img { height:210px; }
+      .about-grid, .visit-grid { grid-template-columns:1fr; gap:36px; }
+      .about-image { height:360px; }
+      .visit-image { height:340px; }
+      .quote { padding:75px 0; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width:calc(100% - 30px); }
+      h1 { font-size:48px; }
+      .hero-visual { min-height:340px; }
+      .round-stamp { width:78px; height:78px; font-size:8px; }
+      .round-stamp b { font-size:18px; }
+      .photo-note { padding:13px 15px; max-width:190px; }
+      .photo-note strong { font-size:16px; }
+      .ticker-inner { justify-content:center; gap:13px 20px; font-size:9px; }
+      .menu-grid { grid-template-columns:1fr; }
+      .menu-card:last-child { display:block; }
+      .menu-card img { height:245px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .detail { grid-template-columns:84px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="wrap">
+    <a class="brand" href="#home" aria-label="Mây Café trang chủ"><span class="brand-mark">m.</span><span>MÂY CAFÉ</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+    <nav id="nav">
+      <a href="#story">Câu chuyện</a><a href="#menu">Thực đơn</a><a href="#visit">Ghé thăm</a>
+      <a class="nav-cta" href="#visit">Tìm chúng tôi ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <div class="eyebrow">Một góc nhỏ bình yên</div>
+        <h1>Chậm một chút,<br><em>vui một ngày.</em></h1>
+        <p class="hero-copy">Một tách cà phê thơm, một chiếc bánh vừa ra lò và một khoảng thời gian dành riêng cho bạn. Chào mừng đến với Mây — nơi những điều giản dị trở nên thật đặc biệt.</p>
+        <div class="actions">
+          <a class="btn primary" href="#menu">Khám phá thực đơn <span>↗</span></a>
+          <a class="btn secondary" href="#story">Chuyện của Mây</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85" alt="Không gian cà phê ấm áp với ánh nắng dịu">
+        <div class="round-stamp"><div>made with<b>♡</b>care daily</div></div>
+        <div class="photo-note"><strong>Nhẹ nhàng như ở nhà.</strong><span>Cà phê ngon · Bánh mới mỗi ngày</span></div>
+      </div>
+    </section>
+
+    <div class="ticker"><div class="wrap ticker-inner"><span><i></i> Hạt cà phê tuyển chọn</span><span><i></i> Bánh nướng mỗi sáng</span><span><i></i> Không gian xanh</span><span><i></i> Chậm lại một nhịp</span></div></div>
+
+    <section id="menu" class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Từ căn bếp nhỏ</div><h2>Món quen, vị thương.</h2></div>
+        <p>Những món được yêu thích nhất ở Mây — làm từ nguyên liệu tử tế, dành cho những ngày cần một chút dịu dàng.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" alt="Ly cà phê sữa đá">
+          <div class="menu-meta"><div><h3>Cà phê sữa</h3><p>Đậm đà, thơm dịu, vừa đủ ngọt.</p></div><span class="price">39k</span></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=800&q=80" alt="Ly latte nghệ thuật">
+          <div class="menu-meta"><div><h3>Latte Mây</h3><p>Espresso cân bằng cùng sữa mịn.</p></div><span class="price">49k</span></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80" alt="Bánh ngọt mới nướng">
+          <div class="menu-meta"><div><h3>Bánh trong ngày</h3><p>Thay đổi theo mùa, nướng mỗi sáng.</p></div><span class="price">45k</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="story">
+      <div class="wrap about-grid">
+        <img class="about-image" src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85" alt="Góc quán cà phê mộc mạc, nhiều ánh sáng tự nhiên">
+        <div class="about-copy">
+          <div class="eyebrow">Một chút về chúng mình</div>
+          <h2>Không cần vội.<br>Ở đây có Mây.</h2>
+          <p>Mây bắt đầu từ một ý nghĩ rất nhỏ: ai cũng xứng đáng có một nơi để thở chậm hơn giữa những ngày bận rộn.</p>
+          <p>Chúng mình chọn hạt cà phê kỹ càng, làm bánh bằng sự kiên nhẫn và chăm chút từng góc ngồi — để mỗi lần ghé qua, bạn đều thấy dễ chịu như trở về một nơi thân quen.</p>
+          <div class="signature">Hẹn bạn ở Mây ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote wrap">
+      <div class="quote-mark">“</div>
+      <blockquote>Đôi khi, điều mình cần chỉ là một tách cà phê ngon và một nơi chẳng cần phải trở thành ai khác.</blockquote>
+      <p>Một lời nhắn từ Mây</p>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="wrap visit-grid">
+        <div>
+          <div class="eyebrow">Cửa chúng mình luôn chờ</div>
+          <h2>Ghé Mây<br>một hôm nhé?</h2>
+          <p class="visit-copy">Mang theo cuốn sách còn đọc dở, người bạn lâu ngày chưa gặp, hoặc đơn giản là chính bạn. Phần còn lại, để Mây chuẩn bị.</p>
+          <div class="visit-details">
+            <div class="detail"><span>Địa chỉ</span><span>12 Nguyễn Văn Bình, Quận 1<br>TP. Hồ Chí Minh <small>(địa chỉ mẫu)</small></span></div>
+            <div class="detail"><span>Giờ mở cửa</span><span>Thứ 2 – Chủ nhật<br>07:30 – 21:30</span></div>
+            <div class="detail"><span>Liên hệ</span><span>hello@maycafe.vn<br>0900 123 456 (số mẫu)</span></div>
+          </div>
+          <a class="btn" href="https://maps.google.com/?q=12+Nguyen+Van+Binh+Quan+1+Ho+Chi+Minh" target="_blank" rel="noreferrer">Xem đường đi ↗</a>
+        </div>
+        <img class="visit-image" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85" alt="Không gian quán cà phê ấm cúng">
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">m.</span><span>MÂY CAFÉ</span></a>
+      <span>© <span id="year"></span> Mây Café. Chậm một chút, vui một ngày.</span>
+      <div class="socials"><a href="#visit">Instagram</a><a href="#visit">Facebook</a></div>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status">Cảm ơn bạn đã ghé Mây ♡</div>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

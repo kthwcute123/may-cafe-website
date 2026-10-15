@@ -64,9 +64,9 @@
     .menu-actions .add { background:var(--green); color:white; }
     .cart-open { border:1px solid var(--green); background:var(--green); color:white; padding:12px 16px; cursor:pointer; border-radius:3px; font-size:12px; font-weight:700; }
     .cart-open span { background:white; color:var(--green); padding:3px 7px; border-radius:50%; margin-left:5px; }
-    .shop-overlay { display:none; position:fixed; inset:0; z-index:100; background:#17221999; align-items:center; justify-content:center; padding:20px; }
+    .shop-overlay { pointer-events:auto; display:none; position:fixed; inset:0; z-index:100; background:#17221999; align-items:center; justify-content:center; padding:20px; }
     .shop-overlay.open { display:flex; }
-    .shop-modal { background:var(--white); width:min(760px,100%); max-height:90vh; overflow:auto; position:relative; box-shadow:0 20px 70px #0003; }
+    .shop-modal { pointer-events:auto; background:var(--white); width:min(760px,100%); max-height:90vh; overflow:auto; position:relative; box-shadow:0 20px 70px #0003; }
     .shop-close { position:absolute; right:12px; top:12px; z-index:2; width:38px; height:38px; border:0; background:white; font-size:25px; cursor:pointer; }
     .detail-layout { display:grid; grid-template-columns:1fr 1fr; }
     .detail-layout img { width:100%; height:100%; min-height:340px; object-fit:cover; }
@@ -171,7 +171,7 @@
   <div class="topline"></div>
   <header class="wrap">
     <a class="brand" href="#home" aria-label="Mây Café trang chủ"><span class="brand-mark">m.</span><span>MÂY CAFÉ</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
     <nav id="nav">
       <a href="#story">Câu chuyện</a><a href="#menu">Thực đơn</a><a href="#visit">Ghé thăm</a>
       <a class="nav-cta" href="#visit">Tìm chúng tôi ↗</a>
@@ -204,9 +204,9 @@
         <p>Những món được yêu thích nhất ở Mây — làm từ nguyên liệu tử tế, dành cho những ngày cần một chút dịu dàng.</p>
       </div>
       <div class="menu-grid" id="menuGrid">
-        <article class="menu-card" data-product="coffee"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" alt="Cà phê sữa đá"><div class="menu-meta"><div><h3>Cà phê sữa</h3><p>Đậm đà, thơm dịu, vừa đủ ngọt.</p></div><span class="price">39k</span></div><div class="menu-actions"><button data-detail="coffee">Xem chi tiết</button><button class="add" data-add="coffee">+ Thêm món</button></div></article>
-        <article class="menu-card" data-product="latte"><img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=800&q=80" alt="Latte nghệ thuật"><div class="menu-meta"><div><h3>Latte Mây</h3><p>Espresso cân bằng cùng sữa mịn.</p></div><span class="price">49k</span></div><div class="menu-actions"><button data-detail="latte">Xem chi tiết</button><button class="add" data-add="latte">+ Thêm món</button></div></article>
-        <article class="menu-card" data-product="cake"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80" alt="Bánh ngọt mới nướng"><div class="menu-meta"><div><h3>Bánh trong ngày</h3><p>Thay đổi theo mùa, nướng mỗi sáng.</p></div><span class="price">45k</span></div><div class="menu-actions"><button data-detail="cake">Xem chi tiết</button><button class="add" data-add="cake">+ Thêm món</button></div></article>
+        <article class="menu-card" data-product="coffee"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80" alt="Cà phê sữa đá"><div class="menu-meta"><div><h3>Cà phê sữa</h3><p>Đậm đà, thơm dịu, vừa đủ ngọt.</p></div><span class="price">39k</span></div><div class="menu-actions"><button type="button" data-detail="coffee">Xem chi tiết</button><button type="button" class="add" data-add="coffee">+ Thêm món</button></div></article>
+        <article class="menu-card" data-product="latte"><img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=800&q=80" alt="Latte nghệ thuật"><div class="menu-meta"><div><h3>Latte Mây</h3><p>Espresso cân bằng cùng sữa mịn.</p></div><span class="price">49k</span></div><div class="menu-actions"><button type="button" data-detail="latte">Xem chi tiết</button><button type="button" class="add" data-add="latte">+ Thêm món</button></div></article>
+        <article class="menu-card" data-product="cake"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80" alt="Bánh ngọt mới nướng"><div class="menu-meta"><div><h3>Bánh trong ngày</h3><p>Thay đổi theo mùa, nướng mỗi sáng.</p></div><span class="price">45k</span></div><div class="menu-actions"><button type="button" data-detail="cake">Xem chi tiết</button><button type="button" class="add" data-add="cake">+ Thêm món</button></div></article>
       </div>
     </section>
 
@@ -255,8 +255,8 @@
     </div>
   </footer>
   <div class="toast" id="toast" role="status">Cảm ơn bạn đã ghé Mây ♡</div>
-  <div class="shop-overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-labelledby="detailName"><div class="shop-modal"><button class="shop-close" data-close="detailOverlay" aria-label="Đóng">×</button><div class="detail-layout"><img id="detailImage" src="" alt=""><div class="detail-copy"><div class="eyebrow">Món nhà Mây</div><h2 id="detailName"></h2><div class="detail-price" id="detailPrice"></div><p id="detailDescription"></p><div>Số lượng</div><div class="quantity"><button id="detailMinus" aria-label="Giảm số lượng">−</button><span id="detailQty">1</span><button id="detailPlus" aria-label="Tăng số lượng">+</button></div><button class="shop-primary" id="addDetail">Thêm vào giỏ hàng</button></div></div></div></div>
-  <div class="shop-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="shop-modal cart-modal"><button class="shop-close" data-close="cartOverlay" aria-label="Đóng">×</button><h2 id="cartTitle">Giỏ hàng của bạn</h2><p class="cart-sub">Những món bạn chọn ở Mây Café</p><div class="cart-items" id="cartItems"></div><div class="cart-total"><span>Tổng cộng</span><strong id="cartTotal">0 ₫</strong></div><button class="shop-primary" id="continueShopping" style="margin-top:20px">Tiếp tục chọn món</button><p class="cart-sub" style="text-align:center;margin-bottom:0">Bản demo, chưa kết nối thanh toán hoặc gửi đơn hàng.</p></div></div>
+  <div class="shop-overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-labelledby="detailName"><div class="shop-modal"><button type="button" class="shop-close" data-close="detailOverlay" aria-label="Đóng">×</button><div class="detail-layout"><img id="detailImage" src="" alt=""><div class="detail-copy"><div class="eyebrow">Món nhà Mây</div><h2 id="detailName"></h2><div class="detail-price" id="detailPrice"></div><p id="detailDescription"></p><div>Số lượng</div><div class="quantity"><button type="button" id="detailMinus" aria-label="Giảm số lượng">−</button><span id="detailQty">1</span><button type="button" id="detailPlus" aria-label="Tăng số lượng">+</button></div><button type="button" class="shop-primary" id="addDetail">Thêm vào giỏ hàng</button></div></div></div></div>
+  <div class="shop-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="shop-modal cart-modal"><button type="button" class="shop-close" data-close="cartOverlay" aria-label="Đóng">×</button><h2 id="cartTitle">Giỏ hàng của bạn</h2><p class="cart-sub">Những món bạn chọn ở Mây Café</p><div class="cart-items" id="cartItems"></div><div class="cart-total"><span>Tổng cộng</span><strong id="cartTotal">0 ₫</strong></div><button type="button" class="shop-primary" id="continueShopping" style="margin-top:20px">Tiếp tục chọn món</button><p class="cart-sub" style="text-align:center;margin-bottom:0">Bản demo, chưa kết nối thanh toán hoặc gửi đơn hàng.</p></div></div>
   <div class="shop-toast" id="shopToast" role="status" aria-live="polite"></div>
 
   <script>
@@ -293,7 +293,7 @@
     function closeShop(id){document.getElementById(id).classList.remove('open');if(!document.querySelector('.shop-overlay.open'))document.body.style.overflow=''}
     function showDetail(id){selected=products[id];detailQty=1;document.getElementById('detailImage').src=selected.image;document.getElementById('detailImage').alt=selected.name;document.getElementById('detailName').textContent=selected.name;document.getElementById('detailPrice').textContent=money(selected.price);document.getElementById('detailDescription').textContent=selected.desc;document.getElementById('detailQty').textContent=detailQty;openShop('detailOverlay')}
     function addItem(id,qty=1){if(!cart[id])cart[id]={product:products[id],qty:0};cart[id].qty+=qty;renderCart();shopToast('Đã thêm '+qty+' × '+products[id].name+' vào giỏ hàng')}
-    function renderCart(){const items=Object.values(cart);document.getElementById('cartCount').textContent=items.reduce((n,x)=>n+x.qty,0);document.getElementById('cartItems').innerHTML=items.length?items.map(({product:p,qty})=>`<div class="cart-row"><img src="${p.image}" alt="${p.name}"><div><h4>${p.name}</h4><small>${money(p.price)} / món</small><div class="quantity"><button data-minus="${p.id}">−</button><span>${qty}</span><button data-plus="${p.id}">+</button></div></div><div class="cart-price">${money(p.price*qty)}<button class="remove-item" data-remove="${p.id}">Xóa</button></div></div>`).join(''):'<div class="empty-cart">🛍️<br>Giỏ hàng đang trống.<br>Chọn một món ngon từ thực đơn nhé!</div>';document.getElementById('cartTotal').textContent=money(items.reduce((n,x)=>n+x.product.price*x.qty,0))}
+    function renderCart(){const items=Object.values(cart);document.getElementById('cartCount').textContent=items.reduce((n,x)=>n+x.qty,0);document.getElementById('cartItems').innerHTML=items.length?items.map(({product:p,qty})=>`<div class="cart-row"><img src="${p.image}" alt="${p.name}"><div><h4>${p.name}</h4><small>${money(p.price)} / món</small><div class="quantity"><button type="button" data-minus="${p.id}">−</button><span>${qty}</span><button type="button" data-plus="${p.id}">+</button></div></div><div class="cart-price">${money(p.price*qty)}<button type="button" class="remove-item" data-remove="${p.id}">Xóa</button></div></div>`).join(''):'<div class="empty-cart">🛍️<br>Giỏ hàng đang trống.<br>Chọn một món ngon từ thực đơn nhé!</div>';document.getElementById('cartTotal').textContent=money(items.reduce((n,x)=>n+x.product.price*x.qty,0))}
     document.getElementById('menuGrid').addEventListener('click',e=>{const d=e.target.closest('[data-detail]'),a=e.target.closest('[data-add]'),card=e.target.closest('[data-product]');if(d){e.stopPropagation();showDetail(d.dataset.detail)}else if(a){e.stopPropagation();addItem(a.dataset.add)}else if(card)showDetail(card.dataset.product)});
     document.getElementById('detailMinus').onclick=()=>{detailQty=Math.max(1,detailQty-1);document.getElementById('detailQty').textContent=detailQty};
     document.getElementById('detailPlus').onclick=()=>{detailQty=Math.min(99,detailQty+1);document.getElementById('detailQty').textContent=detailQty};
@@ -306,6 +306,18 @@
     document.getElementById('cartItems').addEventListener('click',e=>{const plus=e.target.closest('[data-plus]'),minus=e.target.closest('[data-minus]'),remove=e.target.closest('[data-remove]');if(plus){cart[plus.dataset.plus].qty++}else if(minus){const id=minus.dataset.minus;cart[id].qty--;if(cart[id].qty<=0)delete cart[id]}else if(remove){delete cart[remove.dataset.remove]}else return;renderCart()});
     renderCart();
 
+    // Fallback click handling for modal/cart controls.
+    document.addEventListener('click', function(e) {
+      const closeBtn = e.target.closest('[data-close]');
+      if (closeBtn) { e.preventDefault(); closeShop(closeBtn.dataset.close); return; }
+      if (e.target.closest('#continueShopping')) { e.preventDefault(); closeShop('cartOverlay'); return; }
+      if (e.target.closest('#addDetail')) {
+        e.preventDefault();
+        if (selected) { addItem(selected.id, detailQty); closeShop('detailOverlay'); }
+        return;
+      }
+      if (e.target.closest('#openCart')) { e.preventDefault(); renderCart(); openShop('cartOverlay'); }
+    }, true);
   </script>
 </body>
 </html>

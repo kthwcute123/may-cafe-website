@@ -277,7 +277,14 @@
     const products = {
       coffee:{id:'coffee',name:'Cà phê sữa',price:39000,image:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80',desc:'Cà phê phin đậm đà hòa cùng sữa đặc ngọt dịu, hương vị thân quen cho một ngày dễ chịu.'},
       latte:{id:'latte',name:'Latte Mây',price:49000,image:'https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=800&q=80',desc:'Espresso thơm nồng kết hợp sữa mịn màng, dịu nhẹ như một buổi sáng nhiều nắng.'},
-      cake:{id:'cake',name:'Bánh trong ngày',price:45000,image:'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80',desc:'Bánh ngọt thay đổi theo mùa, được chọn để thưởng thức cùng một tách cà phê ngon.'}
+      cake:{id:'cake',name:'Bánh trong ngày',price:45000,image:'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80',desc:'Bánh ngọt thay đổi theo mùa, được chọn để thưởng thức cùng một tách cà phê ngon.'},
+      travai:{id:'travai',name:'Trà vải hoa hồng',price:45000,image:'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80',desc:'Trà thanh mát kết hợp vị ngọt thơm của vải và hương hoa hồng dịu nhẹ, thích hợp cho ngày nắng.'},
+      tradao:{id:'tradao',name:'Trà đào cam sả',price:48000,image:'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=800&q=80',desc:'Trà đào thơm dịu, cam tươi và sả tạo nên vị chua ngọt sảng khoái, thơm mát.'},
+      tradau:{id:'tradau',name:'Trà dâu tươi',price:49000,image:'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=800&q=80',desc:'Trà trái cây dịu nhẹ cùng vị dâu chua ngọt, màu sắc tươi tắn và dễ uống.'},
+      trachanh:{id:'trachanh',name:'Trà chanh mật ong',price:39000,image:'https://images.unsplash.com/photo-1513558161293-c150f6ba8b44?auto=format&fit=crop&w=800&q=80',desc:'Trà chanh thơm nhẹ, thêm chút mật ong ngọt dịu — lựa chọn tươi mát cho buổi chiều.'},
+      tiramisu:{id:'tiramisu',name:'Bánh tiramisu',price:55000,image:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80',desc:'Lớp kem mềm mịn, bánh cacao và hương cà phê hòa quyện trong món bánh ngọt cổ điển.'},
+      cheesecake:{id:'cheesecake',name:'Cheesecake dâu',price:59000,image:'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80',desc:'Bánh phô mai béo nhẹ, mềm mượt, kết hợp vị dâu chua ngọt cho món tráng miệng cân bằng.'},
+      cookie:{id:'cookie',name:'Cookie chocolate',price:29000,image:'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',desc:'Bánh quy nướng thơm bơ, viền giòn và những miếng chocolate tan chảy trong từng miếng cắn.'}
     };
     const cart = {}; let selected = null, detailQty = 1, toastTimer;
     const money = n => new Intl.NumberFormat('vi-VN',{style:'currency',currency:'VND',maximumFractionDigits:0}).format(n);

@@ -175,6 +175,7 @@
     <nav id="nav">
       <a href="#story">Câu chuyện</a><a href="#menu">Thực đơn</a><a href="#visit">Ghé thăm</a>
       <a class="nav-cta" href="#visit">Tìm chúng tôi ↗</a>
+      <button type="button" class="cart-open" id="openCart" aria-label="Mở giỏ hàng">Giỏ hàng <span id="cartCount">0</span></button>
     </nav>
   </header>
 
@@ -306,18 +307,6 @@
     document.getElementById('cartItems').addEventListener('click',e=>{const plus=e.target.closest('[data-plus]'),minus=e.target.closest('[data-minus]'),remove=e.target.closest('[data-remove]');if(plus){cart[plus.dataset.plus].qty++}else if(minus){const id=minus.dataset.minus;cart[id].qty--;if(cart[id].qty<=0)delete cart[id]}else if(remove){delete cart[remove.dataset.remove]}else return;renderCart()});
     renderCart();
 
-    // Fallback click handling for modal/cart controls.
-    document.addEventListener('click', function(e) {
-      const closeBtn = e.target.closest('[data-close]');
-      if (closeBtn) { e.preventDefault(); closeShop(closeBtn.dataset.close); return; }
-      if (e.target.closest('#continueShopping')) { e.preventDefault(); closeShop('cartOverlay'); return; }
-      if (e.target.closest('#addDetail')) {
-        e.preventDefault();
-        if (selected) { addItem(selected.id, detailQty); closeShop('detailOverlay'); }
-        return;
-      }
-      if (e.target.closest('#openCart')) { e.preventDefault(); renderCart(); openShop('cartOverlay'); }
-    }, true);
   </script>
 </body>
 </html>

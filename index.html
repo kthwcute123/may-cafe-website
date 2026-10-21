@@ -18,6 +18,29 @@ h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.04em;mar
 .star{position:absolute;color:#ffc34d;text-shadow:0 0 8px #ffb7d4;font-size:clamp(18px,3vw,30px);animation:twinkle 1.8s ease-in-out infinite alternate}.star.s1{top:12%;left:20%}.star.s2{top:18%;right:16%;animation-delay:.4s}.star.s3{bottom:18%;left:14%;animation-delay:.8s}.star.s4{bottom:12%;right:17%;animation-delay:1.2s}.star.s5{top:48%;left:7%;font-size:17px}.star.s6{top:55%;right:8%;font-size:18px}@keyframes twinkle{from{opacity:.35;transform:scale(.7) rotate(0)}to{opacity:1;transform:scale(1.2) rotate(25deg)}}
 .section-title{text-align:center;margin:12px 0 26px}.section-title h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:12px 0 8px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info{padding:24px;min-height:165px}.icon{font-size:2rem;margin-bottom:10px}.info h3{margin:0 0 8px}.info p{margin:0;color:#927487}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.big{padding:clamp(22px,4vw,36px)}.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{padding:8px 11px;border-radius:99px;background:#fff0f7;color:#a34d75;border:1px solid var(--line)}.fact{padding:16px 18px;background:#fff3f8;border-left:4px solid var(--pink);border-radius:0 14px 14px 0;margin:12px 0;line-height:1.7}.goal{text-align:center;padding:clamp(25px,5vw,50px);background:linear-gradient(135deg,#fff0f7,#fffdf8)}footer{text-align:center;padding:30px 0;color:var(--rose)}.sprinkle{position:fixed;pointer-events:none;z-index:-1;color:#ffb6d2;animation:drift 7s ease-in-out infinite}.sp1{left:3%;top:30%;font-size:22px}.sp2{right:4%;top:65%;font-size:27px;animation-delay:2s}.sp3{left:48%;top:12%;font-size:15px;animation-delay:1s}@keyframes drift{50%{transform:translateY(-24px) rotate(25deg)}}
 @media(max-width:760px){.hero,.two{grid-template-columns:1fr}.art{min-height:320px;order:-1}.grid{grid-template-columns:1fr}.top{align-items:flex-start}.nav{justify-content:flex-start}.nav button{font-size:.85rem;padding:9px 11px}.copy{padding:26px}.wrap{width:min(100% - 22px,1160px)}}
+
+/* pink scrapbook layout inspired by the approved mockup */
+body{background:radial-gradient(circle at 10% 10%,#ffe2ef,transparent 28%),radial-gradient(circle at 95% 35%,#fff0c8,transparent 25%),#fff8fc}
+header.wrap{max-width:none;width:100%;padding:18px 24px 10px;background:#fff8fbdc;border-bottom:1px solid #ffd0e3}
+.topbar{padding:0 0 8px}.logo{font-size:1.3rem}.nav{margin:14px auto 4px;justify-content:center}
+.nav button{border-radius:16px;background:#fff9fc}
+main.wrap{width:min(1280px,calc(100% - 32px));padding-top:20px}
+.hero{grid-template-columns:1fr 1fr;gap:15px;min-height:400px;padding:clamp(20px,3vw,36px);border-radius:22px;background:radial-gradient(ellipse at 72% 50%,#ffdbe9 0,transparent 45%),linear-gradient(120deg,#fff0f6,#ffe2ee 55%,#fff5f9)}
+.hero-copy{background:transparent;border:0;box-shadow:none;padding:clamp(12px,2vw,28px)}
+.hero h1{color:#dc659a;transform:rotate(-2deg)}.hero h1 em{color:#bd568b}
+.art{min-height:350px;background:transparent;border:0;border-radius:22px}
+.orbit{position:absolute;width:85%;aspect-ratio:1;border:2px solid #ffb5d3;border-radius:50%;animation:spin 22s linear infinite}
+.orbit:before{content:"";position:absolute;inset:8%;border:1px dashed #ffc675;border-radius:50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{z-index:3;color:#ffc24c;text-shadow:0 0 8px #ffadd2;animation:twinkle 1.6s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.4;transform:scale(.7) rotate(0)}to{opacity:1;transform:scale(1.2) rotate(28deg)}}
+.gift{position:relative;z-index:2;font-size:0;filter:none;animation:none}
+.chibi-art{width:min(100%,340px);position:relative;z-index:2;filter:drop-shadow(0 9px 8px #b35a8020);animation:bob 3.5s ease-in-out infinite}
+.quicklinks{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:15px}
+.quicklinks button{display:flex;align-items:center;justify-content:center;gap:10px;min-height:82px;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fffafc;color:var(--hot);font-weight:700;transition:.2s}
+.quicklinks button:hover{background:#fff0f7;transform:translateY(-3px)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.art{min-height:270px;order:-1}.quicklinks{grid-template-columns:repeat(2,1fr)}header.wrap{padding:14px}.nav{justify-content:flex-start}main.wrap{width:calc(100% - 20px)}}
 </style></head><body>
 <span class="sprinkle sp1">✧</span><span class="sprinkle sp2">♡</span><span class="sprinkle sp3">✦</span>
 <header class="wrap"><div class="top"><a class="logo" href="#" data-target="home"><span>🎀</span>kthw's little world ♡</a><small class="muted">a tiny pink diary ✧</small></div>

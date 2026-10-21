@@ -1,166 +1,47 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffe5f0">
-<title>kthw cute s1 ♡ | Nguyễn Khánh Thư</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffe8f2">
+<title>kthw's little world ♡</title>
 <style>
-:root{--pink:#f7a9c8;--hot:#e76c9e;--pale:#fff1f7;--cream:#fffafc;--ink:#553849;--muted:#8b6c7d;--line:#f4cadd;--white:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 8% 8%,#ffe2ef 0,transparent 25%),radial-gradient(circle at 95% 30%,#ffeaf4 0,transparent 23%),var(--cream);color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif}
-button{font:inherit;cursor:pointer}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1080px,calc(100% - 32px));margin:auto}
-header{padding:20px 0 12px}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.logo{font-weight:900;font-size:1.15rem;color:var(--hot);letter-spacing:.03em}
-.logo span{display:inline-grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;width:38px;height:38px;margin-right:8px;box-shadow:3px 3px 0 #f7c9dc}
-.tiny{font-size:.8rem;color:var(--muted)}
-.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:22px auto 10px}
-.nav button{border:1px solid var(--line);background:#fff9fc;color:var(--muted);padding:10px 15px;border-radius:999px;transition:.2s;font-weight:700;font-size:.9rem}
-.nav button:hover,.nav button.active{background:var(--hot);color:white;border-color:var(--hot);transform:translateY(-2px);box-shadow:0 5px 12px #e76c9e2b}
-main{padding:12px 0 48px}
-.panel{display:none;animation:appear .28s ease}
-.panel.active{display:block}
-@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:center;min-height:420px}
-.card{background:#ffffffd9;border:1px solid var(--line);border-radius:26px;box-shadow:0 12px 30px #b84e7b0d}
-.hero-copy{padding:clamp(24px,5vw,52px);position:relative;overflow:hidden}
-.eyebrow{display:inline-block;background:var(--pale);border:1px dashed var(--pink);border-radius:999px;padding:8px 12px;color:var(--hot);font-size:.8rem;font-weight:800}
-h1,h2,h3,p{margin-top:0}
-h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.08;margin:18px 0 12px;letter-spacing:-.04em}
-h1 em{color:var(--hot);font-style:normal}
-.lead{color:var(--muted);line-height:1.8;max-width:520px}
-.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.primary,.secondary{border:0;border-radius:14px;padding:12px 17px;font-weight:800}
-.primary{background:var(--hot);color:white;box-shadow:0 6px 0 #d9588b}
-.primary:hover{transform:translateY(-1px)}
-.secondary{background:#fff0f6;color:var(--hot);border:1px solid var(--line)}
-.art{min-height:360px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#ffe6f0,#fff8fb 60%,#f9d9e8);border-radius:28px;border:1px solid var(--line)}
-.gift{font-size:clamp(6rem,13vw,9rem);filter:drop-shadow(0 12px 6px #cc6b9726);animation:bob 3s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(3deg)}}
-.float{position:absolute;font-size:2rem;animation:bob 3.5s ease-in-out infinite}
-.f1{top:12%;left:13%}.f2{right:12%;top:19%;animation-delay:.6s}.f3{bottom:17%;left:15%;animation-delay:1s}.f4{bottom:13%;right:15%;animation-delay:.4s}
-.sticker{position:absolute;bottom:22px;right:18px;background:#fff;border:1px dashed var(--hot);padding:10px 14px;border-radius:14px;transform:rotate(5deg);font-weight:900;color:var(--hot)}
-.section-title{text-align:center;margin:10px 0 25px}
-.section-title .eyebrow{margin-bottom:13px}
-.section-title h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:8px}
-.section-title p{color:var(--muted);line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.info-card{padding:23px;min-height:170px}
-.icon{font-size:2rem;margin-bottom:12px}
-.info-card h3{margin-bottom:8px}
-.info-card p{color:var(--muted);line-height:1.75;margin-bottom:0}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.big-card{padding:clamp(22px,4vw,36px)}
-.pill-list{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
-.pill{padding:9px 12px;background:var(--pale);border:1px solid var(--line);border-radius:999px;color:#a24d74;font-weight:700;font-size:.9rem}
-.fact{padding:18px 20px;border-left:4px solid var(--hot);background:#fff4f8;border-radius:0 16px 16px 0;margin:12px 0;line-height:1.7}
-.goal{background:linear-gradient(135deg,#fff0f6,#fff);border:1px solid var(--line);border-radius:26px;padding:clamp(26px,5vw,50px);text-align:center}
-.goal .big-emoji{font-size:3.2rem}
-.goal h2{font-size:clamp(1.8rem,4vw,2.7rem)}
-.goal strong{color:var(--hot)}
-footer{padding:22px 0 35px;text-align:center;color:var(--muted);font-size:.9rem}
-footer b{color:var(--hot)}
-.notice{font-size:.83rem;color:var(--muted);text-align:center;margin:16px 0 0}
-@media(max-width:760px){.hero{grid-template-columns:1fr}.art{min-height:250px;order:-1}.gift{font-size:6rem}.grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.topbar{align-items:flex-start}.nav{justify-content:flex-start}.nav button{padding:9px 12px}.hero{min-height:0}}
-</style>
-</head>
-<body>
-<header class="wrap">
-  <div class="topbar">
-    <a class="logo" href="#" data-go="home"><span>🎀</span>kthw'S LITTLE WORLD</a>
-    <div class="tiny">made with ♡ by Thư</div>
-  </div>
-  <nav class="nav" aria-label="Các mục giới thiệu">
-    <button class="active" type="button" data-target="home">🏠 Trang chủ</button>
-    <button type="button" data-target="about">🌷 Đôi nét về tui</button>
-    <button type="button" data-target="hobbies">🧶 Sở thích & kỹ năng</button>
-    <button type="button" data-target="facts">💌 Facts thú vị</button>
-    <button type="button" data-target="goals">🎓 Mục tiêu</button>
-    <button type="button" data-target="favorites">💗 Điều nhỏ xinh</button>
-  </nav>
-</header>
+:root{--pink:#ff8fbd;--rose:#c75c8c;--pale:#fff0f7;--ink:#684356;--line:#ffd0e3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif;background:radial-gradient(circle at 15% 15%,#ffe3ef,transparent 30%),radial-gradient(circle at 90% 45%,#fff0b9,transparent 22%),#fff9fc;overflow-x:hidden}
+button{font:inherit;cursor:pointer}.wrap{width:min(1160px,calc(100% - 30px));margin:auto}
+header{padding:22px 0 12px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.logo{font-size:clamp(1.1rem,3vw,1.7rem);font-weight:900;color:var(--rose);text-decoration:none}.logo span{font-size:1.8rem;margin-right:8px}
+.nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px auto}.nav button,.secondary{border:1px solid var(--line);background:#fff9fc;color:var(--rose);padding:10px 14px;border-radius:999px;font-weight:700;transition:.2s}.nav button:hover,.nav button.active{background:#ff9dc5;color:white;transform:translateY(-2px);box-shadow:0 5px 12px #ee87b52b}
+.panel{display:none;animation:appear .35s ease}.panel.active{display:block}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card{background:#ffffffd9;border:1px solid var(--line);border-radius:25px;box-shadow:0 12px 30px #c45b8510}.hero{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.copy{padding:clamp(25px,5vw,55px);position:relative;overflow:hidden}.tag{display:inline-block;padding:8px 13px;border-radius:999px;background:var(--pale);border:1px dashed var(--pink);color:var(--rose);font-weight:bold;font-size:.85rem}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.04em;margin:18px 0}h1 em{font-style:normal;color:var(--rose)}p{line-height:1.85}.muted{color:#977b8b}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.primary{border:0;background:#ee7eae;color:#fff;padding:13px 17px;border-radius:15px;font-weight:bold;box-shadow:0 5px 0 #d96598}.secondary{border-radius:15px}
+.art{min-height:390px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#ffe1ee,#fff9fc 60%,#fff0c5);border:1px solid var(--line);border-radius:30px}
+.chibi{width:min(78%,340px);z-index:2;filter:drop-shadow(0 12px 10px #b35a8022);animation:floaty 3.5s ease-in-out infinite}@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.orbit{position:absolute;width:78%;aspect-ratio:1;border:2px solid #ffacd0;border-radius:50%;animation:spin 18s linear infinite}.orbit:before{content:"";position:absolute;inset:8%;border:1px dashed #ffbf72;border-radius:50%}@keyframes spin{to{transform:rotate(360deg)}}
+.star{position:absolute;color:#ffc34d;text-shadow:0 0 8px #ffb7d4;font-size:clamp(18px,3vw,30px);animation:twinkle 1.8s ease-in-out infinite alternate}.star.s1{top:12%;left:20%}.star.s2{top:18%;right:16%;animation-delay:.4s}.star.s3{bottom:18%;left:14%;animation-delay:.8s}.star.s4{bottom:12%;right:17%;animation-delay:1.2s}.star.s5{top:48%;left:7%;font-size:17px}.star.s6{top:55%;right:8%;font-size:18px}@keyframes twinkle{from{opacity:.35;transform:scale(.7) rotate(0)}to{opacity:1;transform:scale(1.2) rotate(25deg)}}
+.section-title{text-align:center;margin:12px 0 26px}.section-title h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:12px 0 8px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info{padding:24px;min-height:165px}.icon{font-size:2rem;margin-bottom:10px}.info h3{margin:0 0 8px}.info p{margin:0;color:#927487}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.big{padding:clamp(22px,4vw,36px)}.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{padding:8px 11px;border-radius:99px;background:#fff0f7;color:#a34d75;border:1px solid var(--line)}.fact{padding:16px 18px;background:#fff3f8;border-left:4px solid var(--pink);border-radius:0 14px 14px 0;margin:12px 0;line-height:1.7}.goal{text-align:center;padding:clamp(25px,5vw,50px);background:linear-gradient(135deg,#fff0f7,#fffdf8)}footer{text-align:center;padding:30px 0;color:var(--rose)}.sprinkle{position:fixed;pointer-events:none;z-index:-1;color:#ffb6d2;animation:drift 7s ease-in-out infinite}.sp1{left:3%;top:30%;font-size:22px}.sp2{right:4%;top:65%;font-size:27px;animation-delay:2s}.sp3{left:48%;top:12%;font-size:15px;animation-delay:1s}@keyframes drift{50%{transform:translateY(-24px) rotate(25deg)}}
+@media(max-width:760px){.hero,.two{grid-template-columns:1fr}.art{min-height:320px;order:-1}.grid{grid-template-columns:1fr}.top{align-items:flex-start}.nav{justify-content:flex-start}.nav button{font-size:.85rem;padding:9px 11px}.copy{padding:26px}.wrap{width:min(100% - 22px,1160px)}}
+</style></head><body>
+<span class="sprinkle sp1">✧</span><span class="sprinkle sp2">♡</span><span class="sprinkle sp3">✦</span>
+<header class="wrap"><div class="top"><a class="logo" href="#" data-target="home"><span>🎀</span>kthw's little world ♡</a><small class="muted">a tiny pink diary ✧</small></div>
+<nav class="nav" aria-label="Menu"><button class="active" data-target="home">⌂ Trang chủ</button><button data-target="about">♡ Giới thiệu</button><button data-target="hobbies">🧶 Sở thích & kỹ năng</button><button data-target="facts">☆ Facts thú vị</button><button data-target="audio">♫ Góc audio & tiểu thuyết</button><button data-target="goals">🎓 Mục tiêu</button></nav></header>
 <main class="wrap">
-  <section class="panel active" id="home">
-    <div class="hero">
-      <div class="card hero-copy">
-        <span class="eyebrow">♡ welcome to my pink diary ♡</span>
-        <h1>Xin chào,<br>mình là <em>Khánh Thư!</em></h1>
-        <p class="lead">Một chiếc website nhỏ xinh để kể một chút về tui — cô gái thích Toán, mê tiểu thuyết và luôn có audio làm bạn trước giờ ngủ.</p>
-        <div class="cta">
-          <button class="primary" type="button" data-target="about">Làm quen với tui ♡</button>
-          <button class="secondary" type="button" data-target="hobbies">Khám phá sở thích →</button>
-        </div>
-      </div>
-      <div class="art" aria-label="Minh họa hộp quà và trái tim">
-        <span class="float f1">♡</span><span class="float f2">✧</span><span class="float f3">🎀</span><span class="float f4">♡</span>
-        <div class="gift">🎁</div>
-        <div class="sticker">kthw cute s1 💗</div>
-      </div>
-    </div>
-    <p class="notice">Chọn một mục ở thanh hồng phía trên để xem nội dung tương ứng nha!</p>
-  </section>
-
-  <section class="panel" id="about">
-    <div class="section-title"><span class="eyebrow">01 · about me</span><h2>Đôi nét về tui 🌷</h2><p>Rất vui vì bà ghé thăm góc nhỏ của tui nè!</p></div>
-    <div class="grid">
-      <article class="card info-card"><div class="icon">🎀</div><h3>Tui là ai?</h3><p><b>Nguyễn Khánh Thư</b>, mọi người có thể gọi tui là <b>kthw</b>. Tui 15 tuổi, hiện là học sinh lớp <b>10A6</b>.</p></article>
-      <article class="card info-card"><div class="icon">🏫</div><h3>Ngôi trường của tui</h3><p>Tui đang học tại <b>THPT Phú Nhuận</b>. Mỗi ngày là một cơ hội để học thêm điều mới và trưởng thành hơn một xíu.</p></article>
-      <article class="card info-card"><div class="icon">💗</div><h3>Châm ngôn</h3><p>“kthw cute s1” 🎁♡ — cute một chút, cố gắng thật nhiều và luôn là chính mình.</p></article>
-    </div>
-  </section>
-
-  <section class="panel" id="hobbies">
-    <div class="section-title"><span class="eyebrow">02 · things I love</span><h2>Sở thích & kỹ năng 🧶</h2><p>Những điều nhỏ xíu làm ngày của tui vui hơn.</p></div>
-    <div class="two-col">
-      <article class="card big-card"><div class="icon">📚</div><h3>Những điều tui thích</h3><p class="lead">Tui thích đọc tiểu thuyết hơn là sách chữa lành, thích học Toán và nghe audio. Audio gần như là “người bạn ru ngủ” của tui luôn á.</p><div class="pill-list"><span class="pill">📖 Tiểu thuyết</span><span class="pill">➗ Học Toán</span><span class="pill">🎧 Nghe audio</span></div></article>
-      <article class="card big-card"><div class="icon">🧵</div><h3>Những thứ tui làm được</h3><p class="lead">Tui biết móc len và đan len nữa nè. Tự tay làm ra một món đồ nhỏ xinh cảm giác thích lắm luôn!</p><div class="pill-list"><span class="pill">🪡 Móc len</span><span class="pill">🧶 Đan len</span><span class="pill">✨ Kiên nhẫn</span></div></article>
-    </div>
-  </section>
-
-  <section class="panel" id="facts">
-    <div class="section-title"><span class="eyebrow">03 · fun facts</span><h2>Facts thú vị về tui 💌</h2><p>Mấy điều nghe hơi bất ngờ nhưng đúng là tui thiệt!</p></div>
-    <div class="two-col">
-      <div class="card big-card"><div class="fact">➿ Tui đặc biệt thích <b>bảng cửu chương 9</b>. Toán có nét đáng yêu riêng của nó đó nha!</div><div class="fact">🎤 Tui hát cũng hay lắm đó — tự tin là một nửa tài năng hihi.</div><div class="fact">📋 Tui thường xuyên làm <b>cán bộ lớp</b>, nên chắc cũng có chút trách nhiệm và năng lượng tổ chức á.</div></div>
-      <div class="art"><span class="float f1">✿</span><span class="float f2">♡</span><div class="gift">💌</div><div class="sticker">secret facts ✧</div></div>
-    </div>
-  </section>
-
-  <section class="panel" id="goals">
-    <div class="section-title"><span class="eyebrow">04 · my dream</span><h2>Mục tiêu của tui 🎓</h2><p>Chậm một chút cũng được, miễn là mình vẫn tiến về phía trước.</p></div>
-    <div class="goal"><div class="big-emoji">🌸📚</div><h2>Học thật giỏi & đậu <strong>UEL</strong></h2><p class="lead" style="margin:0 auto 20px">Tui muốn cố gắng từng ngày, học tập chăm chỉ và từng bước tiến gần hơn tới ngôi trường mình mong muốn. Cố lên, Khánh Thư ơi! 💗</p><button class="primary" type="button" data-target="home">Về trang chủ ♡</button></div>
-  </section>
-
-  <section class="panel" id="favorites">
-    <div class="section-title"><span class="eyebrow">05 · little things about me</span><h2>Những điều nhỏ xinh ♡</h2><p>Một vài góc nhỏ để mọi người hiểu tui hơn.</p></div>
-    <div class="grid">
-      <article class="card info-card"><div class="icon">🎧</div><h3>Audio của tui</h3><p>Tui thích nghe audio và thường bật audio trước khi ngủ. Âm thanh quen thuộc giúp tui thư giãn sau một ngày dài.</p></article>
-      <article class="card info-card"><div class="icon">📖</div><h3>Gu đọc truyện</h3><p>Tui nghiêng về tiểu thuyết hơn sách chữa lành. Được bước vào một câu chuyện và theo dõi nhân vật là điều tui thích.</p></article>
-      <article class="card info-card"><div class="icon">🌷</div><h3>My current vibe</h3><p>Một chút hồng pastel, một chút dễ thương, và luôn cố gắng tốt hơn mỗi ngày. kthw cute s1 🎁♡</p></article>
-    </div>
-    <p class="notice">Bà có thể đổi mục này thành “Bài hát yêu thích”, “Cuốn tiểu thuyết yêu thích” hoặc “Một ngày của tui” sau nha.</p>
-  </section>
-</main>
-<footer><div class="wrap">Designed with ♡ for <b>Nguyễn Khánh Thư (kthw)</b> · kthw cute s1 🎁💗</div></footer>
-<script>
-(() => {
-  const buttons = document.querySelectorAll('[data-target]');
-  const panels = document.querySelectorAll('.panel');
-  function showPanel(id) {
-    if (!document.getElementById(id)) return;
-    panels.forEach(panel => panel.classList.toggle('active', panel.id === id));
-    document.querySelectorAll('.nav [data-target]').forEach(button => {
-      const active = button.dataset.target === id;
-      button.classList.toggle('active', active);
-      button.setAttribute('aria-current', active ? 'page' : 'false');
-    });
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-  buttons.forEach(button => button.addEventListener('click', () => showPanel(button.dataset.target)));
-})();
-</script>
-</body>
-</html>
+<section class="panel active" id="home"><div class="hero"><div class="card copy"><span class="tag">♡ welcome to my little world ♡</span><h1>Xin chào!<br>Mình là <em>kthw</em> ♡</h1><p class="muted">Chào mừng bà ghé thăm thế giới nhỏ bé của tui nè! 🎀</p><div class="actions"><button class="primary" data-target="about">Làm quen với tui ♡</button><button class="secondary" data-target="hobbies">Khám phá thêm →</button></div></div>
+<div class="art" aria-label="Chibi kthw với những ngôi sao xoay vòng"><div class="orbit"></div><span class="star s1">★</span><span class="star s2">✦</span><span class="star s3">★</span><span class="star s4">✧</span><span class="star s5">✦</span><span class="star s6">★</span>
+<svg class="chibi" viewBox="0 0 340 390" role="img" aria-label="Hình chibi cô gái tóc nâu mặc áo sơ mi trắng, nháy mắt"><defs><linearGradient id="hair" x2="1" y2="1"><stop stop-color="#6d4338"/><stop offset="1" stop-color="#2e2028"/></linearGradient><linearGradient id="shirt" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f6eaf0"/></linearGradient></defs>
+<ellipse cx="170" cy="350" rx="112" ry="17" fill="#f5b7d1" opacity=".45"/>
+<!-- hair behind --> <path d="M73 140 Q47 40 143 30 Q245 5 275 102 Q302 180 271 250 L246 306 L91 300 L66 235Z" fill="url(#hair)" stroke="#57352f" stroke-width="4"/>
+<!-- body --> <path d="M83 280 Q95 246 130 246 L211 246 Q252 255 262 300 L280 350 L60 350Z" fill="url(#shirt)" stroke="#e8cbd8" stroke-width="3"/><path d="M143 251 L169 287 L194 251 L205 350 L128 350Z" fill="#fff" stroke="#ead6e0" stroke-width="2"/><path d="M165 286 L174 286 L180 350 L158 350Z" fill="#f4dce7"/>
+<!-- arms hands on cheeks --> <path d="M111 283 Q88 268 94 238 Q99 220 116 231 L140 268" fill="#ffdfd1" stroke="#e8b8ac" stroke-width="3"/><path d="M229 282 Q252 267 246 238 Q241 220 224 231 L201 268" fill="#ffdfd1" stroke="#e8b8ac" stroke-width="3"/>
+<!-- face --> <ellipse cx="170" cy="165" rx="94" ry="108" fill="#ffe1d3" stroke="#e5b5a7" stroke-width="3"/>
+<!-- fringe --> <path d="M76 153 Q55 52 145 38 Q235 17 265 102 Q236 72 213 75 Q183 111 136 106 Q112 104 91 143 L87 185Z" fill="url(#hair)" stroke="#51332e" stroke-width="4"/><path d="M136 49 Q125 91 139 115 M177 42 Q167 83 180 100 M216 55 Q203 84 222 112" fill="none" stroke="#9a6a59" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+<!-- eyes --> <ellipse cx="132" cy="168" rx="19" ry="24" fill="#fff"/><ellipse cx="137" cy="171" rx="13" ry="18" fill="#55352e"/><ellipse cx="141" cy="163" rx="6" ry="8" fill="#fff"/><path d="M193 170 Q211 151 230 168" fill="none" stroke="#54342e" stroke-width="7" stroke-linecap="round"/><path d="M188 158 l-8 -8 M230 158 l8 -8" stroke="#54342e" stroke-width="4" stroke-linecap="round"/>
+<!-- blush and smile --> <ellipse cx="108" cy="202" rx="17" ry="8" fill="#f6a5b7" opacity=".65"/><ellipse cx="229" cy="202" rx="17" ry="8" fill="#f6a5b7" opacity=".65"/><path d="M158 207 Q171 220 184 207" fill="none" stroke="#c96f78" stroke-width="4" stroke-linecap="round"/>
+<!-- collar & badge --> <path d="M128 250 L151 273 L169 257 L187 273 L211 250" fill="#fff" stroke="#e5cbd7" stroke-width="3"/><rect x="204" y="291" width="29" height="15" rx="3" fill="#fff" stroke="#78a6ca" stroke-width="2"/><path d="M208 296 h19 M208 301 h12" stroke="#e87da9" stroke-width="2"/>
+<!-- bows --> <path d="M82 83 Q57 60 55 82 L74 98 L53 111 Q59 131 83 106 Q105 131 114 110 L94 96 Q117 73 99 69Z" fill="#ff9fc8" stroke="#e46e9f" stroke-width="3"/><circle cx="84" cy="98" r="8" fill="#ffe7f1" stroke="#e46e9f" stroke-width="2"/>
+<text x="170" y="378" font-size="17" text-anchor="middle" fill="#c75c8c" font-weight="bold">kthw cute s1 ♡</text></svg></div></div><p class="muted" style="text-align:center;margin-top:20px">✧ Bấm các mục phía trên để mở từng trang riêng nha bà ✧</p></section>
+<section class="panel" id="about"><div class="section-title"><span class="tag">01 · about me</span><h2>Giới thiệu nhanh về kthw 🌷</h2><p class="muted">Một vài điều nho nhỏ về cô gái đứng sau chiếc web này.</p></div><div class="grid"><article class="card info"><div class="icon">🎀</div><h3>Tui là ai?</h3><p>Tui là <b>Nguyễn Khánh Thư</b>, mọi người có thể gọi tui là <b>kthw</b> ♡</p></article><article class="card info"><div class="icon">🏫</div><h3>Trường lớp</h3><p>Tui 15 tuổi, học lớp <b>10A6</b> tại <b>THPT Phú Nhuận</b>.</p></article><article class="card info"><div class="icon">💗</div><h3>Tính cách của tớ</h3><p>Hơi cầu toàn, dễ xúc động và thích sự ngọt ngào, ấm áp.</p><div class="pills"><span class="pill">Dễ thương</span><span class="pill">Chăm chỉ</span><span class="pill">Tận tâm</span></div></article></div></section>
+<section class="panel" id="hobbies"><div class="section-title"><span class="tag">02 · things I love</span><h2>Sở thích & kỹ năng 🧶</h2><p class="muted">Những điều khiến ngày của tui vui hơn.</p></div><div class="two"><article class="card big"><div class="icon">💗</div><h3>Sở thích của tui</h3><p class="muted">Tui thích đọc tiểu thuyết tiên hiệp/huyền huyễn, nghe audio trước khi ngủ, thích Toán — nhất là hình học. Tui còn thích mèo, hoa tulip, cẩm tú cầu và những ngày mưa nhỏ.</p><div class="pills"><span class="pill">📚 Tiểu thuyết</span><span class="pill">🎧 Audio</span><span class="pill">🐈 Mèo</span><span class="pill">🌷 Hoa</span><span class="pill">🌧️ Mưa nhỏ</span></div></article><article class="card big"><div class="icon">🧶</div><h3>Len len len!</h3><p class="muted">Tui biết móc len và đan len, thích tự tay làm đồ nhỏ xinh và muốn thử làm móc khóa. Màu len tui mê là kem, trắng và xanh navy.</p><div class="pills"><span class="pill">🪡 Móc len</span><span class="pill">🧵 Đan len</span><span class="pill">🎁 Làm móc khóa</span></div></article></div></section>
+<section class="panel" id="facts"><div class="section-title"><span class="tag">03 · fun facts</span><h2>Facts thú vị về tui 💌</h2><p class="muted">Mấy mẩu chuyện nho nhỏ nè!</p></div><div class="two"><div class="card big"><div class="fact">📖 Cuốn truyện tui thích là <b>Ma Đạo Tổ Sư</b>; nhân vật tui thích là <b>Kim Quang Dao</b>.</div><div class="fact">🌧️ Bài hát/audio tui hay nghe: <b>Dự báo thời tiết hôm nay mưa</b>.</div><div class="fact">🐱 Tui thích mèo, hoa tulip, cẩm tú cầu và mấy ngày mưa nhẹ.</div></div><div class="card big"><div class="fact">🍜 Món tui thích: <b>phở và hủ tiếu</b>.</div><div class="fact">💛💗 Hai màu tui thích là <b>vàng và hồng</b>.</div><div class="fact">🇰🇷 Một nơi tui muốn ghé thăm: <b>Hàn Quốc</b>.</div></div></div></section>
+<section class="panel" id="audio"><div class="section-title"><span class="tag">04 · audio & novels</span><h2>Góc audio & tiểu thuyết 🎧</h2><p class="muted">Một góc nhỏ dành cho những câu chuyện làm tui mê mẩn.</p></div><div class="two"><article class="card big"><div class="icon">🎧</div><h3>Audio tui thích</h3><p class="muted">Tui thích audio buồn hoặc những cốt truyện báo thù, thường nghe trước khi ngủ vì thấy vui và thư giãn.</p><div class="pills"><span class="pill">Audio buồn</span><span class="pill">Cốt truyện báo thù</span><span class="pill">Nghe trước khi ngủ</span></div></article><article class="card big"><div class="icon">📚</div><h3>Thế giới tiểu thuyết</h3><p class="muted">Tui thích thể loại tiên hiệp/huyền huyễn. <b>Ma Đạo Tổ Sư</b> là cuốn tui yêu thích, còn <b>Trường ca Achilles</b> là một cuốn đáng nhớ.</p></article></div></section>
+<section class="panel" id="goals"><div class="section-title"><span class="tag">05 · my dream</span><h2>Mục tiêu của kthw 🎓</h2><p class="muted">Từng bước nhỏ cũng đang đưa mình đến gần ước mơ hơn.</p></div><div class="card goal"><div style="font-size:3.5rem">🌸📚⚖️</div><h2>Đậu <strong style="color:var(--rose)">UEL</strong> và trở thành luật sư</h2><p class="muted" style="max-width:680px;margin:0 auto 20px">Tui muốn học về kinh tế, theo đuổi con đường luật sư và cố gắng kiếm thật nhiều tiền để chăm lo cho ba mẹ. Tui sẽ cố gắng từng ngày nè! 💗</p><button class="primary" data-target="home">Về trang chủ ♡</button></div></section>
+</main><footer>♡ <b>My soul is always with you.</b> ♡<br><small>made with love for kthw 🎀</small></footer>
+<script>(()=>{const buttons=document.querySelectorAll('[data-target]'),panels=document.querySelectorAll('.panel');function show(id){if(!document.getElementById(id))return;panels.forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav [data-target]').forEach(b=>{let yes=b.dataset.target===id;b.classList.toggle('active',yes);b.setAttribute('aria-current',yes?'page':'false')});window.scrollTo({top:0,behavior:'smooth'})}buttons.forEach(b=>b.addEventListener('click',()=>show(b.dataset.target)))})();</script>
+</body></html>
